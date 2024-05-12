@@ -1,0 +1,61 @@
+// Definindo os breakpoints
+$breakpoints: (
+    xs: 0px,
+    sm: 575.98px,
+    md: 767.98px,
+    lg: 991.98px,
+    xl: 1199.98px,
+);
+
+// Mixin para media queries responsivas baseadas nos breakpoints
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media (min-width: #{$value}) { @content; }
+
+    } @else {
+        @error "Invalid breakpoint. Please use 'xs', 'sm', 'md' or 'lg''.";
+    }
+}
+
+// Mixin para definir a tipografia do elemento
+@mixin typography($font-size, $line-height, $font-family, $color, $letter-spacing: initial) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-family: $font-family;
+    color: $color;
+    letter-spacing: $letter-spacing;
+}
+
+// Mixin para flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//Mixin para adicionar margem ao elemento
+@mixin margin($top: 0, $right: null, $bottom: null, $left: null) {
+    margin: $top if($right, $right) if($bottom, $bottom) if($left, $left);
+}
+
+//Mixin para adicionar padding ao elemento
+@mixin padding($top: 0, $right: null, $bottom: null, $left: null) {
+    padding: $top if($right, $right) if($bottom, $bottom) if($left, $left);
+}
+  
+//Mixin para criar grids
+@mixin grid($column-sizes, $gap: 20px) {
+    display: grid;
+    gap: $gap;
+  
+    @if type-of($column-sizes) == number {
+      grid-template-columns: repeat($column-sizes, 1fr);
+    } @else if type-of($column-sizes) == list {
+      grid-template-columns: $column-sizes;
+    } @else {
+      @error "Invalid argument type for $column-sizes. Please pass either a number or a list.";
+    }
+}

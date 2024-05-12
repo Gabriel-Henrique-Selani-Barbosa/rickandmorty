@@ -1,0 +1,24 @@
+body[data-theme="light"] {
+
+    --background-color-body: #FFFFFF;
+    --background-color-header: #FFFFFF;
+
+    --primary-color: #11B0C8;
+    --primary-font-color: #313234;
+
+    --background-color-card: #F9F9F9;
+    --background-color-card-hover: #F1F1F1;
+}
+
+body[data-theme="dark"] {
+
+    --background-color-body: #1E1E20;
+    --background-color-header: #000000;
+
+    --primary-color: #11B0C8;
+    --primary-font-color: #FFFFFF;
+
+    --background-color-card: #1A1A1A;
+    --background-color-card-hover: #313234;
+    
+}
