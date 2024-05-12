@@ -1,9 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import axiosInstance from './axiosInstance.js';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.use(router);
 
-app.mount('#app')
+// Defina o axiosInstance como uma propriedade global do Vue
+app.config.globalProperties.axiosInstance = axiosInstance;
+
+app.mount('#app');
