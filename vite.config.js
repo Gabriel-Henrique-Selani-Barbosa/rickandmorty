@@ -11,13 +11,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "@/styles/main.scss";`,
-      },
-    },
-  },
   optimizeDeps: {
     exclude: ['axiosInstance.js'], // Exclua o arquivo axiosInstance.js da otimização
   },

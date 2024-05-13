@@ -20,8 +20,9 @@ $breakpoints: (
 }
 
 // Mixin para definir a tipografia do elemento
-@mixin typography($font-size, $line-height, $font-family, $color, $letter-spacing: initial) {
+@mixin typography($font-size, $font-weight, $line-height, $font-family, $color, $letter-spacing: initial) {
     font-size: $font-size;
+    font-weight: $font-weight;
     line-height: $line-height;
     font-family: $font-family;
     color: $color;
@@ -38,12 +39,12 @@ $breakpoints: (
 
 //Mixin para adicionar margem ao elemento
 @mixin margin($top: 0, $right: null, $bottom: null, $left: null) {
-    margin: $top if($right, $right) if($bottom, $bottom) if($left, $left);
+    margin: $top $right $bottom $left;
 }
 
 //Mixin para adicionar padding ao elemento
 @mixin padding($top: 0, $right: null, $bottom: null, $left: null) {
-    padding: $top if($right, $right) if($bottom, $bottom) if($left, $left);
+    padding: $top $right $bottom $left;
 }
   
 //Mixin para criar grids

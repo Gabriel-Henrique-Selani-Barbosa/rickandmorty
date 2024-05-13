@@ -1,0 +1,96 @@
+.header {
+    background: var(--background-color-header);
+    border-bottom: 2px solid var(--primary-color);
+
+    @include padding(35px, 0, 0, 0);
+
+    @include breakpoint(md) {
+        @include flex(row, space-between, center)
+    }
+
+    @include breakpoint(lg) {
+        @include padding(64px, 0, 0, 0);
+    }
+
+    &__first-content {
+        @include breakpoint(md) {
+            width: calc(100% - 435px);
+            @include padding(0, 0, 45px, 0);
+        }
+
+        @include breakpoint(lg) {
+            @include padding(0, 0, 74px, 0);
+        }
+
+        h1 {
+            @include typography($font-size-xxl, $font-weight-bold, normal, $base-font-family, var(--primary-font-color));
+
+            @include margin(35px, 0px, 0px, 0px);
+
+            @include breakpoint(lg) {
+                @include margin(64px, 0px, 0px, 0px);
+            }
+
+            @include breakpoint(lg) {
+                max-width: 335px;
+            }
+
+            strong {
+                color: var(--primary-color);
+            }
+        }
+
+        h5 {
+            @include typography($font-size-medium, $font-weight-normal, normal, $base-font-family, var(--primary-font-color));
+
+            @include margin(15px, 0px, 0px, 0px);
+            
+            @include breakpoint(lg) {
+                @include margin(24px, 0px, 0px, 0px);
+            }
+        }
+
+        .header__buttons {
+            @include margin(35px, 0px, 0px, 0px);
+
+            @include breakpoint(lg) {
+                @include margin(70px, 0px, 0px, 0px);
+            }
+        }
+
+        p {
+            @include typography($font-size-medium, $font-weight-normal, normal, $base-font-family, var(--primary-color));
+
+            @include margin(24px, 0px, 0px, 0px);
+        }
+    }
+
+    &__second-content {
+        @include breakpoint(md) {
+            width: 435px;
+        }
+
+        .icon-wrapper {
+            @include margin(30px, 0, 0, 0);
+
+            @include breakpoint(md) {
+                @include margin(0, 0, 0, 0);
+                max-width: 435px;
+            }
+
+            object {
+                width: 100%;
+                svg {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__buttons {
+        @include flex(row, flex-start, center);
+
+        flex-wrap: wrap;
+        gap: 10px 30px;
+    }
+}

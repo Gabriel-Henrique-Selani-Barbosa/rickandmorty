@@ -1,0 +1,19 @@
+.theme {
+    @include flex(row, flex-start, center);
+    &__option {
+        width: auto;
+        border-radius: 32px;
+        @include flex(row, center, center);
+        @include padding(4px, 6px, 4px, 6px);
+        @include typography($font-size-small, $font-weight-normal, normal, $base-font-family, var(--primary-font-color));
+        cursor: pointer;
+        .icon-wrapper {
+            margin-right: 8px;
+            height: 24px;
+        }
+        &.active {
+            background: var(--primary-color);
+            color: var(--secondary-font-color);
+        }
+    }
+}

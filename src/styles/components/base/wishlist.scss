@@ -1,0 +1,22 @@
+.wishlist-button {
+    width: 157px;
+    height: 32px;
+    background: var(--primary-color);
+    border-radius: 32px;
+    a {
+        @include typography($font-size-small, $font-weight-normal, normal, $base-font-family ,var(--secondary-font-color));
+        @include flex(row, center, center);
+        @include padding(5px, 4px, 3px, 5px);
+        width: 100%;
+        height: 100%;
+    }
+
+    .icon-wrapper {
+        margin-right: 8px;
+    }
+
+    .icon-wrapper, object, svg {
+        width: 24px;
+        height: 24px;
+    }
+}

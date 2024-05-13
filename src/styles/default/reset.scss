@@ -21,6 +21,24 @@ ol {
   list-style: none;
 }
 
+.icon-wrapper {
+  display: flex;
+}
+
+.container {
+  padding: 0 25px;
+  max-width: 1240px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
 // Define a borda da caixa para elementos de bloco
 // Isso evita que elementos de bloco tenham margens indesejadas
 // e respeita as dimensões definidas
