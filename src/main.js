@@ -2,14 +2,16 @@ import './styles/main.scss'
 
 import { createApp } from 'vue';
 import App from './App.vue';
+import axios from 'axios';
+import store from './store';
 import router from './router';
-import axiosInstance from './axiosInstance.js';
 
 const app = createApp(App);
 
-app.use(router);
+app.config.globalProperties.axios=axios;
 
-// Defina o axiosInstance como uma propriedade global do Vue
-app.config.globalProperties.axiosInstance = axiosInstance;
+app.use(store);
+
+app.use(router);
 
 app.mount('#app');

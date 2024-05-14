@@ -23,7 +23,8 @@
             getIconPathByStatus(status) {
                 const colorMap = {
                     Alive: 'alive',
-                    Dead: 'dead'
+                    Dead: 'dead',
+                    unknown: 'unknown'
                 };
                 return colorMap[status] || '';
             }
