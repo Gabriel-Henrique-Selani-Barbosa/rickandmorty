@@ -1,9 +1,11 @@
 <script>
     import Icon from '@/components/base/Icon.vue';
+    import { RouterLink } from 'vue-router';
 
     export default {
         components: {
-            Icon
+            Icon,
+            RouterLink
         },
         props: {
             characters: {
@@ -55,8 +57,9 @@
                 </li>
             </ul>
         </div>
-        <a class="character__item--know-more">
-
-        </a>
+        <RouterLink :to="{ name: 'Characters', params: { characterId: character.id }}" class="character__item--know-more">
+            <Icon iconPath="know" />
+            Saiba Mais
+        </RouterLink>
     </li>
 </template>

@@ -7,13 +7,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: HomeView
     },
     {
-      path: '/characters',
-      name: 'characters',
-      component: CharactersView
+      path: '/characters/?id=:characterId',
+      name: 'Characters',
+      component: CharactersView,
+      props: true
     }
     // {
     //   path: '/about',
