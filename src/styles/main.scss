@@ -7,6 +7,12 @@
 
 //Components styles
 @import 'components/base/characters.scss';
+@import 'components/base/episodes.scss';
+@import 'components/base/locations.scss';
 @import 'components/base/theme.scss';
 @import 'components/base/wishlist.scss';
 @import 'components/layout/header.scss';
+@import 'components/layout/footer.scss';
+
+//Views styles
+@import 'views/home.scss';

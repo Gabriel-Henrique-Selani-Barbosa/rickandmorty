@@ -37,7 +37,7 @@
         <figure class="character__item--figure">
             <img :src="character.image" :alt="character.name" />
         </figure>
-        <div class="character__item--infos">
+        <div class="character__item--info">
             <h3>{{ character.name }}</h3>
 
             <ul class="status">

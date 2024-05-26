@@ -1,0 +1,32 @@
+.episode__item {
+    @include flex(column, center, center);
+    @include padding(16px, 16px, 16px, 16px);
+
+    gap: 16px;
+    border-radius: 16px;
+    background: var(--background-color-card);
+
+    &:hover {
+        background: var(--background-color-card-hover);
+    }
+
+    &--info {
+
+        h3 {
+
+            @include flex(row, flex-start, flex-start);
+
+            .icon-wrapper {
+                width: 24px;
+                margin-right: 8px;
+                object, svg {
+                    width: 24px;
+                }
+            }
+
+            @include typography($font-size-medium, $font-weight-normal, normal, $base-font-family, var(--primary-font-color));
+
+            margin: 0;
+        }
+    }
+}

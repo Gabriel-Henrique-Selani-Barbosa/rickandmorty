@@ -18,7 +18,7 @@
         }
     }
 
-    &--infos {
+    &--info {
         @include flex(column, center, flex-start);
 
         gap: 16px;

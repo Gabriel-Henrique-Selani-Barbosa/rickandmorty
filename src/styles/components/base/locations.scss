@@ -1,0 +1,39 @@
+.location__item {
+    @include flex(column, center, center);
+    @include padding(24px, 21px, 16px, 21px);
+
+    gap: 16px;
+    border-radius: 16px;
+    background: var(--background-color-card);
+    position: relative;
+
+    &:hover {
+        background: var(--background-color-card-hover);
+    }
+
+    &--info {
+        .icon-wrapper {
+            width: 48px;
+            position: absolute;
+            bottom: calc(100% - 16px);
+            left: 50%;
+            transform: translateX(-50%);
+
+            object, svg {
+                width: 48px;
+            }
+        }
+
+        h3 {
+            @include typography($font-size-medium, $font-weight-normal, normal, $base-font-family, var(--primary-font-color));
+
+            text-align: center
+        }
+
+        h2 {
+            @include typography($font-size-medium, $font-weight-normal, normal, $base-font-family, var(--primary-color));
+
+            text-align: center;
+        }
+    }
+}

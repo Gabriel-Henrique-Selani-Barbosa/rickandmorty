@@ -1,0 +1,57 @@
+.footer {
+    @include margin(80px, 0, 0, 0);
+
+    &__top {
+        @include flex(row, space-between, center);
+        @include padding(0, 0, 79px, 0);
+
+        width: 100%;
+        border-bottom: 1px solid var(--footer-border-color);
+        .icon-wrapper {
+            width: 100px;
+
+            svg, object {
+                width: 100px;
+            }
+
+            @include breakpoint(lg) {
+                width: 165px;
+
+                svg, object {
+                    width: 165px;
+                }
+            }
+        }
+
+        span {
+            @include typography($font-size-medium, $font-weight-normal, normal, $base-font-family, var(--primary-font-color));
+            @include flex(row, center, center);
+
+            width: 155px;
+            gap: 8px;
+            .icon-wrapper {
+                width: 40px;
+
+                svg, object {
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        @include padding(27px, 0, 68px, 0);
+
+        width: 100%;
+        span {
+            @include typography($font-size-small, $font-weight-normal, normal, $base-font-family, var(--primary-font-color));
+            @include flex(row, flex-end, center);
+
+            cursor: pointer;
+            gap: 8px;
+            strong {
+                color: var(--primary-color);
+            }
+        }
+    }
+}
