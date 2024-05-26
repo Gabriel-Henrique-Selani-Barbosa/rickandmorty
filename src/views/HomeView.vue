@@ -39,28 +39,30 @@ export default {
 
 <template>
   <main>
-    <div class="characters">
-      <h2>Personagens</h2>
+    <div class="container">
+      <div class="characters">
+        <h2>Personagens</h2>
 
-      <ul class="characters__list">
-        <CharacterCard :characters="characters"/>
-      </ul>
-    </div>
+        <ul class="characters__list">
+          <CharacterCard :characters="characters"/>
+        </ul>
+      </div>
 
-    <div class="episodes">
-      <h2>Episódios</h2>
+      <div class="episodes">
+        <h2>Episódios</h2>
 
-      <ul class="episodes__list">
-        <EpisodeCard :episodes="episodes"/>
-      </ul>
-    </div>
+        <ul class="episodes__list">
+          <EpisodeCard :episodes="episodes"/>
+        </ul>
+      </div>
 
-    <div class="planets">
-      <h2>Localizações</h2>
+      <div class="planets">
+        <h2>Localizações</h2>
 
-      <ul class="planets__list">
-        <LocationCard :locations="locations"/>
-      </ul>
+        <ul class="planets__list">
+          <LocationCard :locations="locations"/>
+        </ul>
+      </div>
     </div>
   </main>
 </template>

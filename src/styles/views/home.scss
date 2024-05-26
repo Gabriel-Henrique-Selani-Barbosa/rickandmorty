@@ -1,9 +1,9 @@
 .characters {
     @include flex;
+    @include margin(68px, 0, 0, 0);
+    
     flex-wrap: wrap;
     gap: 32px 16px;
-    @include padding(0, 16px, 0, 16px);
-    @include margin(68px, 0, 0, 0);
     >h2 {
         @include typography($font-size-xl, $font-weight-bold, normal, $base-font-family, var(--primary-font-color));
     }
@@ -30,10 +30,10 @@
 
 .episodes {
     @include flex;
+    @include margin(68px, 0, 0, 0);
+
     flex-wrap: wrap;
     gap: 32px 16px;
-    @include padding(0, 16px, 0, 16px);
-    @include margin(68px, 0, 0, 0);
     >h2 {
         @include typography($font-size-xl, $font-weight-bold, normal, $base-font-family, var(--primary-font-colory));
     }
@@ -64,10 +64,10 @@
 
 .planets {
     @include flex;
+    @include margin(68px, 0, 0, 0);
+    
     flex-wrap: wrap;
     gap: 32px 16px;
-    @include padding(0, 16px, 0, 16px);
-    @include margin(68px, 0, 0, 0);
     >h2 {
         @include typography($font-size-xl, $font-weight-bold, normal, $base-font-family, var(--primary-font-color));
     }
