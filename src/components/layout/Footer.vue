@@ -23,13 +23,13 @@
         <div class="container">
             <div class="footer__top">
                 <RouterLink to="/">
-                    <Icon iconPath="logo" iconColor="#11B0C8" />
+                    <Icon iconPath="logo" />
                 </RouterLink>
 
-                <span @click="scrollToTop()">Voltar ao topo <Icon iconPath="arrowUp" iconColor="#11B0C8" /></span>
+                <span @click="scrollToTop()">Voltar ao topo <Icon iconPath="arrowUp" /></span>
             </div>
             <div class="footer__bottom">
-                <span><Icon iconPath="dev" iconColor="#11B0C8" />Desenvolvido por <strong>Gabriel Barbosa</strong></span>
+                <span><Icon iconPath="dev" />Desenvolvido por <strong>Gabriel Barbosa</strong></span>
             </div>
         </div>
     </footer>

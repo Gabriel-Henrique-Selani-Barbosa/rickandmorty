@@ -1,51 +1,42 @@
-<template>
-  <div class="icon-wrapper">
-    <object type="image/svg+xml" class="icon" :data="getIconFullPath" ref="svgObject"></object>
-  </div>
-</template>
-
 <script>
+const vSvg = {
+  mounted(el, binding) {
+    const svgPath = binding.value.path;
+    const iconColor = binding.value.color;
+    fetch(svgPath)
+      .then(response => response.text())
+      .then(svgData => {
+        // Cria um elemento temporário para manipular o SVG
+        const tempEl = document.createElement('div');
+        tempEl.innerHTML = svgData;
+        // Atualiza a cor do path do SVG com a cor fornecida, se houver
+        const svgElement = tempEl.querySelector('svg');
+        if (iconColor) {
+          const pathElement = svgElement.querySelector('path');
+          pathElement.setAttribute('fill', iconColor);
+        }
+        // Adiciona o SVG modificado ao elemento do componente
+        el.appendChild(svgElement);
+      });
+  }
+};
+
 export default {
   props: {
     iconPath: String,
-    iconColor: String
+    iconColor: String // Adiciona uma prop para a cor do ícone
   },
-  data() {
-    return {
-      svgObject: null
-    };
+  directives: {
+    svg: vSvg
   },
   computed: {
     getIconFullPath() {
       return `/icons/${this.iconPath}.svg`;
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.svgObject = this.$refs.svgObject;
-      if (this.svgObject) {
-        this.svgObject.addEventListener('load', this.updateSvgStyle);
-      }
-    });
-  },
-  watch: {
-    iconColor() {
-      this.updateSvgStyle();
-    }
-  },
-  methods: {
-    updateSvgStyle() {
-      if (this.svgObject && this.svgObject.contentDocument) {
-        const pathElements = this.svgObject.contentDocument.querySelectorAll('path');
-        pathElements.forEach((pathElement) => {
-          if (pathElement.hasAttribute('fill')) {
-            pathElement.setAttribute('fill', String(this.iconColor || ''));
-          } else if (pathElement.hasAttribute('stroke')) {
-            pathElement.setAttribute('stroke', String(this.iconColor || ''));
-          }
-        });
-      }
-    }
   }
 };
 </script>
+
+<template>
+  <div class="icon-wrapper" v-svg="{ path: getIconFullPath, color: iconColor }"></div>
+</template>

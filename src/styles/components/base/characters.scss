@@ -1,5 +1,5 @@
 .character__item {
-    @include flex(column, center, center);
+    @include flex(column, flex-start, center);
     @include padding(16px, 16px, 16px, 16px);
 
     gap: 16px;
@@ -34,14 +34,15 @@
 
             gap: 8px;
             li {
-                @include flex(row, flex-start, center);                
+                @include flex(row, flex-start, flex-start);                
                 @include typography($font-size-medium, $font-size-medium, normal, $base-font-family, var(--primary-font-color));
 
                 .icon-wrapper {
                     width: 16px;
                     margin-right: 4px;
-                    object, svg {
+                    svg {
                         width: 16px;
+                        height: 16px;
                     }
                 }
             }
